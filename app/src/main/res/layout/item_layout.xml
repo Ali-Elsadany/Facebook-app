@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--row-->
+
+        <LinearLayout
+            android:id="@+id/row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            tools:ignore="MissingConstraints" >
+
+            <!--image -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                app:cardCornerRadius="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                tools:ignore="MissingConstraints" >
+                <ImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/yellow"
+                    tools:ignore="MissingConstraints" />
+            </androidx.cardview.widget.CardView>
+
+            <!--column-->
+
+            <LinearLayout
+                android:id="@+id/column"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="@id/row"
+                app:layout_constraintBottom_toBottomOf="@id/row"
+                >
+                <!--
+            name text
+    -->
+                <TextView
+                    android:id="@+id/nameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    tools:text="@string/unblast"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+
+                    />
+
+                <!--
+                            row in the column contains time text and earth icon
+                -->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:id="@+id/timeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        tools:text="@string/_2_hrs"
+                        android:textColor="@color/gray"
+                        android:textSize="10sp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/earthIcon"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/earthicon" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/optionsIcon"
+                android:layout_width="20dp"
+                android:layout_height="10dp"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/option"
+                />
+
+        </LinearLayout>
+
+        <!--
+            post caption
+        -->
+
+        <TextView
+            android:id="@+id/caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/row"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            tools:text="@string/caption"
+            android:textColor="@color/black"
+            tools:ignore="MissingConstraints" />
+
+        <!--
+            caption link
+        -->
+
+        <TextView
+            android:id="@+id/captionLink"
+            android:linksClickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/caption"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            tools:text="@string/captionLink"
+            android:textColor="#1167AC"
+            tools:ignore="MissingConstraints" />
+
+        <!--
+            Post Image
+        -->
+
+        <ImageView
+            android:id="@+id/yellowImagePost"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            tools:src="@drawable/yellow"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toBottomOf="@id/captionLink"
+            android:layout_marginTop="20dp"
+            tools:ignore="MissingConstraints"
+            />
+
+        <!--
+            likes and shares counter
+        -->
+
+        <LinearLayout
+            android:id="@+id/likesAndShare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/yellowImagePost"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            tools:ignore="MissingConstraints" >
+
+            <ImageView
+                android:id="@+id/likeIcon"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/like" />
+            <TextView
+                android:id="@+id/numberOfLikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                tools:text="12"
+                />
+            <TextView
+                android:id="@+id/numberOfShares"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="230dp"
+                tools:text="1 Share"
+                android:textColor="#737373"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="20dp"
+                app:cardCornerRadius="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                tools:ignore="MissingConstraints" >
+
+                <ImageView
+                    android:id="@+id/yellowImageShare"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:scaleType="centerCrop"
+                    tools:ignore="MissingConstraints"
+                    tools:src="@drawable/yellow" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/moreOption"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/down_arrow"
+                />
+        </LinearLayout>
+
+        <!--
+            Like , Comment and share Buttons
+        -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/likesAndShare"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/likeButton"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:textAllCaps="false"
+                android:textColor="#737373"
+                android:drawableLeft="@drawable/like_icon_button"
+                android:text="Like"
+
+                />
+
+            <Button
+                android:id="@+id/commentButton"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/comment"
+                android:textAllCaps="false"
+                android:background="@color/white"
+                android:text="Comment"
+                android:textColor="#737373"
+
+                />
+            <Button
+                android:id="@+id/shareButton"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/share"
+                android:textAllCaps="false"
+                android:background="@color/white"
+                android:text="Share"
+                android:textColor="#737373"
+
+                />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
